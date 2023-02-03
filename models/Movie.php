@@ -4,7 +4,7 @@
         public $title;
         public $genre;
         public $year;
-        public $format = "16:9";
+        public $isWidescreen = "True";
 
         public function __construct($title, $genre, $year)
         {
@@ -14,12 +14,12 @@
         }
 
         public function printFormat() {
-            return $this->format;
+            if($this->year < 2000){
+                return $this->isWidescreen = "False";
+            } else {
+                return $this->isWidescreen;
+            }
         }
     }
 
-
-$film1 = new Movie("Avatar", "Fantasy", 2023);
-$film2 = new Movie("Bullet Train", "Action", 2022);
-var_dump($film1, $film2);
 ?>  
